@@ -1,6 +1,8 @@
 package com.advanced.bank.bank.system.controller;
 
 import com.advanced.bank.bank.system.model.Bank;
+import com.advanced.bank.bank.system.service.BankService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,28 +11,35 @@ import java.util.List;
 @RequestMapping("api/banks")
 public class BankController {
 
-    @PostMapping
-    public void createBank(@RequestBody Bank bank){
+    private final BankService bankService;
 
+    @Autowired
+    public BankController(BankService bankService) {
+        this.bankService = bankService;
+    }
+
+    @PostMapping
+    public void createBank(@RequestBody Bank bank) {
+        bankService.createBank(bank);
     }
 
     @PutMapping
-    public void updateBank(@RequestBody Bank bank){
+    public void updateBank(@RequestBody Bank bank) {
 
     }
 
     @GetMapping
-    public List<Bank> getAllBanks(){
+    public List<Bank> getAllBanks() {
         return null;
     }
 
     @GetMapping("/{bankId}")
-    public Bank getBank(@PathVariable Long bankId){
+    public Bank getBank(@PathVariable Long bankId) {
         return null;
     }
 
     @DeleteMapping("/{bankId}")
-    public void deleteBank(@PathVariable Long bankId){
+    public void deleteBank(@PathVariable Long bankId) {
 
     }
 }
