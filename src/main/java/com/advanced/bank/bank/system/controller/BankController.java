@@ -19,27 +19,27 @@ public class BankController {
     }
 
     @PostMapping
-    public void createBank(@RequestBody Bank bank) {
+    public void createBank(@RequestBody Bank bank){
         bankService.createBank(bank);
     }
 
     @PutMapping
-    public void updateBank(@RequestBody Bank bank) {
+    public void updateBank(@RequestBody Bank bank){
 
     }
 
     @GetMapping
-    public List<Bank> getAllBanks() {
+    public List<Bank> getAllBanks(){
         return null;
     }
 
     @GetMapping("/{bankId}")
-    public Bank getBank(@PathVariable Long bankId) {
+    public Bank getBank(@PathVariable Long bankId){
         return null;
     }
 
     @DeleteMapping("/{bankId}")
-    public void deleteBank(@PathVariable Long bankId) {
+    public void deleteBank(@PathVariable Long bankId){
 
     }
 }

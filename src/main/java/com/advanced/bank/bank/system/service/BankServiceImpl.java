@@ -8,8 +8,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+
 @Component
-public class BankServiceImpl implements BankService {
+public class BankServiceImpl implements BankService{
 
     private final BankRepository bankRepository;
     private final AddressRepository addressRepository;
@@ -26,9 +27,11 @@ public class BankServiceImpl implements BankService {
 
         validateBank(bank);
 
-        if (null == bank.getAddress().getId()) {
+        if (null == bank.getAddress().getId()){
             addressRepository.save(bank.getAddress());
         }
+
+
         bankRepository.save(bank);
     }
 
@@ -52,9 +55,10 @@ public class BankServiceImpl implements BankService {
 
     }
 
-    private void validateBank(Bank bank) {
-        if (null == bank.getAddress()) {
+    private void validateBank(Bank bank){
+        if (null == bank.getAddress()){
             throw new IllegalArgumentException("Invalid address");
+
         }
     }
 }
