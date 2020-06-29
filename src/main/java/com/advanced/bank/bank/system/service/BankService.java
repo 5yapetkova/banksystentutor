@@ -10,7 +10,7 @@ public interface BankService {
 
     void createBank(Bank bank);
     void updateBank(Bank bank);
-    List<Bank> getAllBanks();
+    Iterable<Bank> getAllBanks();
     Bank getBankById(Long bankId);
     void deleteBankById(Long bankId);
 }
